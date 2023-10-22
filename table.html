@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>UTS PEMROGRAMAN WEB</title>
+</head>
+<body>
+    <header>
+        <h1>Website Data Diri Mahasiswa</h1>
+        <img src="C:\Users\ASUS\Downloads\Seventeen.jpg" alt="UTS Pemweb" style="width: 100px;">
+    </header>
+    <div class="container">
+        <main>
+            <h2>Data Mahasiswa</h2>
+            <table>
+                <tr>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Program Studi</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Alamat</th>
+                </tr>
+                <script>
+                    const mahasiswaData = JSON.parse(localStorage.getItem("mahasiswaData"));
+                    if (mahasiswaData) {
+                        mahasiswaData.forEach(function (data) {
+                            document.write("<tr>");
+                            document.write("<td>" + data.nama + "</td>");
+                            document.write("<td>" + data.nim + "</td>");
+                            document.write("<td>" + data.prodi + "</td>");
+                            document.write("<td>" + data.email + "</td>");
+                            document.write("<td>" + data.password + "</td>");
+                            document.write("<td>" + data.gender + "</td>");
+                            document.write("<td>" + data.tgl_lahir + "</td>");
+                            document.write("<td>" + data.alamat + "</td>");
+                            document.write("</tr>");
+                        });
+                    }
+                </script>
+            </table>
+        </main>
+        <aside>
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li><a href="form.html">Halaman Formulir</a></li>
+                <li><a href="table.html">Halaman Tabel</a></li>
+            </ul>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; 121140060_GIOVANNI </p>
+    </footer>
+</body>
+</html>
